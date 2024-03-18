@@ -1,0 +1,7 @@
+{
+  "name": "@flowplayer/components-<%~ it.newComponentHTMLName %>",
+  "main": "./index.ts",
+  "flowplayer": {
+    "componentName": "<%~ it.newComponentHTMLName %>"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "name": "@flowplayer/components-fancy-ui",
+  "main": "./index.ts",
+  "flowplayer": {
+    "componentName": "fancy-ui"
+  },
+  "dependencies": {
+    "@flowplayer/player": "^3.10.1"
+  }
+}

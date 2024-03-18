@@ -1,0 +1,10 @@
+export class <%~ it.newComponentClassName %> extends HTMLElement {
+  constructor () {
+    super()
+  }
+}
+// handle cdn installs
+if (typeof window !== "undefined" && typeof flowplayer !== "undefined") {
+  window.customElements.define("<%~ it.newComponentHTMLName %>", <%~ it.newComponentClassName %>)
+  flowplayer.customElements.set("<%~ it.flowplayerComponentName %>", "<%~ it.newComponentHTMLName %>")
+}

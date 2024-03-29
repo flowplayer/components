@@ -2,6 +2,7 @@ import inquirer, {type Question} from 'inquirer'
 import { validComponentNames } from "./flowplayer.helpers"
 import {globby} from "globby"
 import fs from "fs/promises"
+import { packages } from "../utils/packages"
 
 const createComponentClassName = (newComponentName : string) => {
   const parts = newComponentName.split("-")
@@ -14,22 +15,22 @@ const ensureValidWebComponentName = (newComponentName : string)=> {
 }
 
 const isNotUnique = async (input : string)=> {
-  const packageFiles = await globby("packages/*/package.json")
-  for (const f of packageFiles) {
-    const pkg = await fs.readFile(f).then(c => JSON.parse(c.toString()))
+  const packageFiles = await packages()
+  for (const pkg of packageFiles) {
     if (pkg.flowplayer.componentName == input) return true
   }
-
   return false
 }
+
 
 export type ComponentInfo = {
   flowplayerComponentName: string;
   newComponentHTMLName: string;
   newComponentClassName: string;
+  description: string;
 }
 
-export async function prompt () : ComponentInfo {
+export async function prompt () : Promise<ComponentInfo> {
   const componentNames = await validComponentNames()
   const answers = await inquirer.prompt([
     {
@@ -51,10 +52,15 @@ export async function prompt () : ComponentInfo {
         return true
       },
     },
+    {
+      name: "description",
+      message: "please write a short description of the new component:"
+    }
   ])
   return {
     flowplayerComponentName: answers.flowplayerComponentName, 
     newComponentHTMLName: ensureValidWebComponentName(answers.newComponentHTMLName),
-    newComponentClassName: createComponentClassName(answers.newComponentHTMLName)
+    newComponentClassName: createComponentClassName(answers.newComponentHTMLName),
+    description: answers.description,
   }
 }

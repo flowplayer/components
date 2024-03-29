@@ -1,0 +1,8 @@
+{
+  "name": "@flowplayer/components-fancy-ui",
+  "main": "./index.ts",
+  "description": "it's new and fancy",
+  "flowplayer": {
+    "componentName": "fancy-ui"
+  }
+}

@@ -2,7 +2,7 @@
   "name": "@flowplayer/components",
   "packageManager": "yarn@3.6.1",
   "scripts": {
-    "gen:component": "tsx code-gen/bin.ts"
+    "new:component": "tsx tooling/code-gen/bin.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
@@ -11,7 +11,9 @@
     "inquirer": "^9.2.16",
     "mustache": "^4.2.0",
     "tsx": "^4.7.1",
-    "turbo": "^1.12.4"
+    "turbo": "^1.12.4",
+    "typescript": "latest",
+    "typescript-plugin-css-modules": "^5.1.0"
   },
   "workspaces": [
     "packages/*"

@@ -19,7 +19,8 @@
     "packages/*"
   ],
   "volta": {
-    "node": "20.11.1"
+    "node": "20.11.1",
+    "yarn": "3.8.1"
   },
   "dependencies": {
     "colors": "^1.4.0"

@@ -1,10 +1,9 @@
-export class <%~ it.newComponentClassName %> extends HTMLElement {
+import { installer } from "../../shared/installer"
+
+export default class <%~ it.newComponentClassName %> extends HTMLElement {
   constructor () {
     super()
   }
 }
-// handle cdn installs
-if (typeof window !== "undefined" && typeof flowplayer !== "undefined") {
-  window.customElements.define("<%~ it.newComponentHTMLName %>", <%~ it.newComponentClassName %>)
-  flowplayer.customElements.set("<%~ it.flowplayerComponentName %>", "<%~ it.newComponentHTMLName %>")
-}
+// handle umd installs
+installer("<%~ it.flowplayerComponentName %>", "<%~ it.newComponentHTMLName %>", <%~ it.newComponentClassName %>)

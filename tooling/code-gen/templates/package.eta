@@ -3,6 +3,8 @@
   "main": "./index.ts",
   "description": "<%~ it.description %>",
   "flowplayer": {
-    "componentName": "<%~ it.newComponentHTMLName %>"
+    "componentName": "<%~ it.newComponentHTMLName %>",
+    "overridenComponent": "<%~ it.flowplayerComponentName %>",
+    "className": "<%~ it.newComponentClassName %>"
   }
 }

@@ -1,11 +1,11 @@
 import { globby } from "globby";
 import fs from "fs/promises"
 
-export type FlowplayerComponentPackage = 
-  { name: string
-  ; description: string
-  ; flowplayer: {componentName: string}
-  }
+export type FlowplayerComponentPackage = {
+  name: string;
+  description: string;
+  flowplayer: {componentName: string; overridenComponent: string; className: string;}
+}
 
 export async function packages () : Promise<FlowplayerComponentPackage[]> {
   return globby("packages/*/package.json")

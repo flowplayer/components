@@ -2,7 +2,8 @@
   "name": "@flowplayer/components",
   "packageManager": "yarn@3.6.1",
   "scripts": {
-    "new:component": "tsx tooling/code-gen/bin.ts"
+    "new:component": "tsx tooling/code-gen/bin.ts",
+    "cdn:manifest": "tsx tooling/cdn/bin.ts"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",

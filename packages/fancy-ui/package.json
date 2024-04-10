@@ -3,6 +3,7 @@
   "main": "./index.ts",
   "description": "it's new and fancy",
   "flowplayer": {
-    "componentName": "fancy-ui"
+    "componentName": "fancy-ui",
+    "overridenComponent": "flowplayer-ui"
   }
 }

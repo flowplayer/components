@@ -1,4 +1,4 @@
-import { installer } from "../../shared/installer"
+import { install } from "../../shared/install"
 
 export default class FancyUi extends HTMLElement {
   constructor () {
@@ -7,4 +7,4 @@ export default class FancyUi extends HTMLElement {
 }
 
 // handle cdn installs
-installer("flowplayer-ui", "fancy-ui", FancyUi)
+install("flowplayer-ui", "fancy-ui", FancyUi)

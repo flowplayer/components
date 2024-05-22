@@ -1,6 +1,7 @@
 {
   "name": "@flowplayer/components",
   "packageManager": "yarn@3.6.1",
+  "private": true,
   "scripts": {
     "new:component": "tsx tooling/code-gen/bin.ts",
     "cdn:manifest": "tsx tooling/cdn/bin.ts"

@@ -1,4 +1,4 @@
-import { installer } from "../../shared/installer"
+import { install } from "../../shared/install"
 
 export default class <%~ it.newComponentClassName %> extends HTMLElement {
   constructor () {

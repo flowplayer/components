@@ -6,4 +6,4 @@ export default class <%~ it.newComponentClassName %> extends HTMLElement {
   }
 }
 // handle umd installs
-installer("<%~ it.flowplayerComponentName %>", "<%~ it.newComponentHTMLName %>", <%~ it.newComponentClassName %>)
+install("<%~ it.flowplayerComponentName %>", "<%~ it.newComponentHTMLName %>", <%~ it.newComponentClassName %>)

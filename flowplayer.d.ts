@@ -1,4 +1,4 @@
-import {type FlowplayerUMD} from "@flowplayer/player"
+import { FlowplayerUMD} from "@flowplayer/player"
 declare global {
   var flowplayer: FlowplayerUMD;
 }

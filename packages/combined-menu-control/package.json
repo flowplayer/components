@@ -1,0 +1,10 @@
+{
+  "name": "@flowplayer/components-combined-menu-controls",
+  "main": "./index.ts",
+  "description": "A control bar with a single combined menu for all settings",
+  "flowplayer": {
+    "componentName": "combined-menu-controls",
+    "overridenComponent": "flowplayer-control",
+    "className": "CombinedMenuControl"
+  }
+}

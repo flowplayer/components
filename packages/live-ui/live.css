@@ -1,0 +1,25 @@
+.is-live.is-live-ui .fp-left-zone, .is-live.is-live-ui .fp-right-zone, .is-live.is-live-ui .fp-middle-zone {
+    display: none; }
+
+.is-live.is-live-ui .fp-live-ui {
+    display: flex; }
+
+.is-live.is-live-ui .fp-middle {
+    justify-content: center;
+    align-items: center; }
+
+.fp-live-ui {
+    display: none;
+    width: unset; }
+
+.fp-live-start {
+    padding: 0.7em;
+    margin-right: 0.7em;
+    border-style: solid;
+    cursor: pointer;
+    filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.4)); }
+
+.fp-live-edge {
+    padding: 0.7em;
+    background: #006680;
+    cursor: pointer; }

@@ -1,7 +1,8 @@
 import { install } from "../../shared/install"
+import { type Player } from "@flowplayer/player"
 
 export default class <%~ it.newComponentClassName %> extends HTMLElement {
-  constructor () {
+  constructor (player: Player) {
     super()
   }
 }

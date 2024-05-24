@@ -5,7 +5,7 @@ import support from "../utils"
 import { SliderStates, makeSlider } from "./slider"
 
 
-export default class FlowplayerVerticalVolumeControl extends HTMLElement {
+export default class VerticalVolume extends HTMLElement {
 
   constructor(player: Player) {
     super()
@@ -80,5 +80,5 @@ export default class FlowplayerVerticalVolumeControl extends HTMLElement {
     progress.style.height = player.muted ? "0" : Math.round(amount * 100) + "%"
   }
 }
-// handle umd installs
-install("flowplayer-volume-control", "flowplayer-vertical-volume-control", FlowplayerVerticalVolumeControl)
+
+install("flowplayer-volume-control", "vertical-volume-bar", VerticalVolume)

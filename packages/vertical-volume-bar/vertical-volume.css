@@ -1,0 +1,45 @@
+.fp-volume-control-vertical {
+    position: relative;
+}
+
+.fp-volume-control-vertical .fp-volume-vertical {
+    position: absolute;
+    cursor: pointer;
+    opacity: 0;
+    padding: 0.5em;
+    left: -0.4em;
+    bottom: 1.3em;
+    height: 10em;
+}
+
+.fp-volume-control-vertical .fp-volume-vertical:focus {
+    opacity: 1;
+}
+
+.fp-volume-control-vertical .fp-volume-container {
+    display: flex;
+    background-color: #a7b4b8;
+    height: 100%;
+    width: 0.4em;
+    align-items: flex-end;
+}
+
+.fp-volume-control-vertical .fp-volume-progress {
+    width: 100%;
+}
+
+.fp-volume-control-vertical .fp-dragger {
+    left: -0.29em;
+}
+
+.fp-volume-control-vertical .fp-volume-mute-unmute {
+    padding-top: 1.2em;
+}
+
+.fp-volume-control-vertical .fp-volume-mute-unmute:after {
+    padding-bottom: 0.7em;
+}
+
+.fp-volume-control-vertical .fp-volume-mute-unmute:focus + .fp-volume-vertical {
+    opacity: 1;
+}

@@ -1,5 +1,6 @@
 import { install } from "../../shared/install"
 import { type Player } from "@flowplayer/player"
+import "./index.css"
 import {CLICK, VOLUME_CHANGE} from "@flowplayer/player/core/events"
 import support from "../utils"
 import { SliderStates, makeSlider } from "./slider"

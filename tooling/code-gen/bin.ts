@@ -12,5 +12,6 @@ import fs from "fs/promises"
   await fs.mkdir(root)
   await fs.writeFile(path.join(root, "package.json"), pkg)
   await fs.writeFile(path.join(root, "index.ts"), code)
+  await fs.writeFile(path.join(root, "index.css"), "")
   console.log(`🌱 created %s`, answers.newComponentHTMLName)
 }())

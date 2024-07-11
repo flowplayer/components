@@ -1,5 +1,6 @@
 import { install } from "../../shared/install"
 import { type Player } from "@flowplayer/player"
+import "./index.css"
 import { type FlowplayerMenu, MenuDialog } from "./menuDialog"
 
 export default class CombinedMenuControl extends HTMLElement{

@@ -8,7 +8,7 @@ function getEntries(dir) {
     })
     .filter(dirent => dirent.isDirectory())
     .map(dirent => ({
-      [`${dirent.name}`]: `${dir}/${dirent.name}/index.ts`
+      [`@flowplayer/components/${dirent.name}`]: `${dir}/${dirent.name}/index.ts`
     }))
   )
 }

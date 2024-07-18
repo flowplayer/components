@@ -1,5 +1,6 @@
 import { install } from "../../shared/install"
 import { type Player } from "@flowplayer/player"
+import "./index.css"
 import {BEFORE_PLAY, CLICK, CONFIG, DBL_CLICK, SOURCE, TOUCH_END} from "@flowplayer/player/core/events"
 
 type SingletonTimer =

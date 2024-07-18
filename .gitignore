@@ -1,6 +1,7 @@
 .yarn
 .vscode
 node_modules
+dist
 #!.yarn/patches
 #!.yarn/plugins
 #!.yarn/releases

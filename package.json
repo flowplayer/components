@@ -4,7 +4,8 @@
   "private": true,
   "scripts": {
     "new:component": "tsx tooling/code-gen/bin.ts",
-    "cdn:manifest": "tsx tooling/cdn/bin.ts"
+    "cdn:manifest": "tsx tooling/cdn/bin.ts",
+    "build": "webpack"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
@@ -16,7 +17,11 @@
     "tsx": "^4.7.1",
     "turbo": "^1.12.4",
     "typescript": "latest",
-    "typescript-plugin-css-modules": "^5.1.0"
+    "webpack": "^5.91.0",
+    "ts-loader": "^9.5.1",
+    "style-loader": "^4.0.0",
+    "css-loader": "^7.1.2",
+    "webpack-cli": "^5.1.4"
   },
   "workspaces": [
     "packages/*"

@@ -17,7 +17,7 @@
     "tsx": "^4.7.1",
     "turbo": "^1.12.4",
     "typescript": "latest",
-    "webpack": "^5.91.0",
+    "webpack": "^5.94.0",
     "ts-loader": "^9.5.1",
     "style-loader": "^4.0.0",
     "css-loader": "^7.1.2",

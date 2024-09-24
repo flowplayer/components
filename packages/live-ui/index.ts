@@ -148,4 +148,4 @@ export default class LiveUiMiddle extends HTMLElement{
   }
 }
 
-install("flowplayer-middle", "live-ui-middle", LiveUiMiddle)
+install("flowplayer-middle", "live-ui", LiveUiMiddle)

@@ -1,7 +1,7 @@
 {
   "name": "@flowplayer/components-live-ui",
   "main": "./index.ts",
-  "description": "A screen rendered for live streams before playback starts, with two buttons: one for starting a stream from the beginning and another one  for going going live",
+  "description": "A screen rendered for live streams before playback starts, with two buttons: one for starting a stream from the beginning and another one for going live",
   "flowplayer": {
     "componentName": "live-ui",
     "overridenComponent": "flowplayer-middle",

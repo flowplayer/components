@@ -3,7 +3,7 @@
   "main": "./index.ts",
   "description": "A control bar with a single combined menu for all settings",
   "flowplayer": {
-    "componentName": "combined-menu-controls",
+    "componentName": "combined-menu-control",
     "overridenComponent": "flowplayer-control",
     "className": "CombinedMenuControl"
   }

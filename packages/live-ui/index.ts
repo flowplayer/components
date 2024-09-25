@@ -127,12 +127,12 @@ export default class LiveUiMiddle extends HTMLElement{
     const start = document.createElement("button")
     start.classList.add("fp-live-start")
     start.textContent = player.i18n("core.watch_beginning", "Watch from beginning")
-    this.setAttribute("aria-label", player.i18n("core.watch_live_start", "Watch from beginning"))
+    start.setAttribute("aria-label", player.i18n("core.watch_live_start", "Watch from beginning"))
 
     const live = document.createElement("button")
     live.classList.add("fp-live-edge")
     live.textContent = player.i18n("core.watch_live", "Watch live")
-    this.setAttribute("aria-label", player.i18n("core.watch_live", "Watch live"))
+    live.setAttribute("aria-label", player.i18n("core.watch_live", "Watch live"))
 
     ;[start, live].forEach((button)=> {
       button.onclick = (e) => {

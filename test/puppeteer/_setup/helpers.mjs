@@ -173,7 +173,7 @@ export function withComponents({componentNames, config, token, files, puppeteer,
         components.forEach((component, idx) => t.assert(component, componentNames[idx]))
         try {
             try {
-                await run(t, page, player, components)
+                await run(t, page, player, ...components)
             } catch (err) {
                 // todo: open an issue with ava.js about this
                 t.fail(err.message)

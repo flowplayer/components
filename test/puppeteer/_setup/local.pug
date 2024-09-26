@@ -2,19 +2,18 @@ html(lang="en")
     meta(charset="utf-8")
     head
         link(rel="stylesheet" href="https://cdn.flowplayer.com/releases/native/3/stable/style/flowplayer.css")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/flowplayer.min.js")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/plugins/hls.min.js")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/plugins/ovp.min.js")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/plugins/qsel.min.js")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/plugins/speed.min.js")
-        script(src = "https://cdn.flowplayer.com/releases/native/3/stable/plugins/vtsel.min.js")
     body
         div(id = "player")
-        //inject components
-        each component in Test.components
-          script!= component
-
-        script
+        script(type= "module")
+            | import flowplayer from "https://cdn.flowplayer.com/releases/native/3/stable/esm/default/flowplayer.min.js"
+            | import ovp from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/ovp.min.js"
+            | import hls from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/hls.min.js"
+            | import qsel from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/qsel.min.js"
+            | import speed from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/speed.min.js"
+            | window.flowplayer = flowplayer
+            | flowplayer(ovp, hls, qsel, speed);
+            each component in Test.components
+              |!{component}
             | localStorage["flowplayer/debug"] = ".*"
             | window.Errors = []
             | window.onerror = function(messageOrEvent, source, lineno, colno, error) { window.Errors.push([...arguments]) }

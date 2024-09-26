@@ -14,7 +14,7 @@ export function install (flowplayerComponent : string, name : string, klass : Cu
     return void window.flowplayer.customElements.set(flowplayerComponent, name)
   }
 
-  window.addEventListener("flowplayer:umd" as any, (e : CustomEvent<typeof window.flowplayer>) => {
+  document.addEventListener("flowplayer:umd" as any, (e : CustomEvent<typeof window.flowplayer>) => {
     const flowplayer = e.detail
     flowplayer.customElements.set(flowplayerComponent, name)
   })

@@ -80,7 +80,8 @@ export async function compileLocalTest(t, {config, componentNames}) {
 
 const {
     PUPPETEER_PRODUCT: puppeteerProduct,
-    CHROME_PATH: chromePath = "/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome",
+    //Applications/Google Chrome.app/Contents/MacOS/Google Chrome
+    CHROME_PATH: chromePath = "/usr/bin/google-chrome",
     FIREFOX_PATH: firefoxPath = "/usr/bin/firefox"
 } = process.env
 

@@ -64,7 +64,7 @@ export function titleToFile(title, suffix = ".html") {
     return fileName + suffix
 }
 
-export async function compileLocalTest(t, {config, components: componentNames}) {
+export async function compileLocalTest(t, {config, componentNames}) {
     const components = await Promise.all(componentNames.map((name) => loadComponent(name)))
 
     const compiled = Templates.local({
@@ -111,7 +111,7 @@ export async function makePuppeteerSession(t, args) {
 
 async function getPlayer(
     t,
-    components,
+    componentNames,
     config,
     token,
     puppeteer,
@@ -130,16 +130,17 @@ async function getPlayer(
     if (!process.env.DEBUG) await recorder.start(recordingFile)
     const {fileName, filePath} = await compileLocalTest(t, {
         config: JSON.stringify(config).replaceAll(":host:", host),
-        components,
+        componentNames,
     })
     const testDocument = `${context.host}/${fileName}` //host +  fileName
     await page.goto(testDocument, puppeteer || {waitUntil: "networkidle2", timeout: 120 * 1000}
     )
     const player = await page.$(".fp-engine")
-    return {player, filePath, recordingFile}
+    const components = await Promise.all(componentNames.map((name) => page.$(name)))
+    return {components, player, filePath, recordingFile}
 }
 
-export function withPlayer({components, config, token, files, puppeteer, args}, setup) {
+export function withComponents({componentNames, config, token, files, puppeteer, args}, setup) {
     return async function (t, run) {
         await mkdirp(tmpDir)
         await mkdirp("/tmp/puppeteer-native/components/recordings/")
@@ -154,9 +155,9 @@ export function withPlayer({components, config, token, files, puppeteer, args}, 
 
         const {browser, page, recorder} = await makePuppeteerSession(t, args)
 
-        const {player, filePath, recordingFile} = await getPlayer(
+        const {components, player, filePath, recordingFile} = await getPlayer(
             t,
-            components,
+            componentNames,
             config,
             token,
             puppeteer,
@@ -166,10 +167,13 @@ export function withPlayer({components, config, token, files, puppeteer, args}, 
             page
         )
 
+        //ensure we have player
         t.assert(player)
+        //ensure the components are rendered
+        components.forEach((component, idx) => t.assert(component, componentNames[idx]))
         try {
             try {
-                await run(t, page, player)
+                await run(t, page, player, components)
             } catch (err) {
                 // todo: open an issue with ava.js about this
                 t.fail(err.message)

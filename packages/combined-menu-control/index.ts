@@ -34,4 +34,4 @@ export default class CombinedMenuControl extends HTMLElement{
   }
 }
 
-install("flowplayer-control", "combined-menu-controls", CombinedMenuControl)
+install("flowplayer-control", "combined-menu-control", CombinedMenuControl)

@@ -1,0 +1,21 @@
+html(lang="en")
+    meta(charset="utf-8")
+    head
+        link(rel="stylesheet" href="https://cdn.flowplayer.com/releases/native/3/stable/style/flowplayer.css")
+    body
+        div(id = "player")
+        script(type= "module")
+            | import flowplayer from "https://cdn.flowplayer.com/releases/native/3/stable/esm/default/flowplayer.min.js"
+            | import ovp from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/ovp.min.js"
+            | import hls from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/hls.min.js"
+            | import qsel from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/qsel.min.js"
+            | import speed from "https://cdn.flowplayer.com/releases/native/3/stable/esm/plugins/speed.min.js"
+            | window.flowplayer = flowplayer
+            | flowplayer(ovp, hls, qsel, speed);
+            each component in Test.components
+              |!{component}
+            | localStorage["flowplayer/debug"] = ".*"
+            | window.Errors = []
+            | window.onerror = function(messageOrEvent, source, lineno, colno, error) { window.Errors.push([...arguments]) }
+            | window.__FLOWPLAYER_TOKEN = "eyJraWQiOiJiRDJrSnhuTkppT1AiLCJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiJ9.eyJjIjoie1wiYWNsXCI6NixcImlkXCI6XCJiRDJrSnhuTkppT1BcIn0iLCJpc3MiOiJGbG93cGxheWVyIn0.6SS-jLJb338KVYAsj4SFVBzbah-auDeQjeBqjJL6SRa_vJKt4xW7-lSlZGjqsKAqhXFso2UF_BaBkJZ1S1SQFg"
+            | window.player = flowplayer("#player", !{Test.config})

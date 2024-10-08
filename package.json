@@ -5,7 +5,8 @@
   "scripts": {
     "new:component": "tsx tooling/code-gen/bin.ts",
     "cdn:manifest": "tsx tooling/cdn/bin.ts",
-    "build": "webpack"
+    "build": "webpack",
+    "test:puppeteer": "yarn ava --config test/puppeteer/_ava.config.mjs"
   },
   "devDependencies": {
     "@types/inquirer": "^9.0.7",
@@ -19,6 +20,13 @@
     "typescript": "latest",
     "webpack": "^5.91.0",
     "ts-loader": "^9.5.1",
+    "puppeteer": "^14.4.0",
+    "mkdirp": "^1.0.4",
+    "http-server": "^14.1.0",
+    "puppeteer-screen-recorder": "^2.0.2",
+    "ava": "^4.2.0",
+    "pug": "^3.0.3",
+    "dotenv": "^16.0.1",
     "style-loader": "^4.0.0",
     "css-loader": "^7.1.2",
     "webpack-cli": "^5.1.4"

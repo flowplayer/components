@@ -7,7 +7,7 @@ on:
     types: [opened, synchronize]
 
 jobs:
-  build:
+  test-puppeteer:
     name: puppeteer tests
     timeout-minutes: 5
     runs-on: ubuntu-latest
@@ -18,13 +18,16 @@ jobs:
         with:
           fetch-depth: 2
 
-      - name: Setup Node.js environment
+      - name: setup node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
 
-      - name: Install dependencies
+      - name: npm install
         run: npm install --frozen-lockfile
 
-      - name: Test
+      - name: build
+        run: npm run build
+
+      - name: test - puppeteer
         run: npm run test:puppeteer

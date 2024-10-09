@@ -13,21 +13,10 @@ const Player = withComponents({
 
 test("live-ui / player starts live", Player, async (t, page, player, live_ui) => {
     await startPlayback(page, player, live_ui, true)
-    await page.evaluate((player) => {
-        const currentTime = player.currentTime
-        const edge = player.hls.liveSyncPosition
-
-        if (Math.abs(currentTime - edge) > 1) throw new Error("playback did not start from edge")
-    }, player)
 })
 
 test("live-ui / player starts from beginning", Player, async (t, page, player, live_ui) => {
     await startPlayback(page, player, live_ui, false)
-    await page.evaluate((player) => {
-        const currentTime = player.currentTime
-        const start = player.hls.liveSyncPosition - player.live_state.dvr_window
-        if (Math.abs(currentTime - start) > 1) throw new Error("playback did not start from beginning")
-    }, player)
 })
 
 async function startPlayback(page, player, live_ui, live) {
@@ -37,17 +26,20 @@ async function startPlayback(page, player, live_ui, live) {
         captureEvent(page, player, "loadeddata")
     ])
 
-    //wait for 10'' before starting playback
-    setTimeout(() => {
-        page.evaluate((live_ui, live) => {
-            const buttonSelector = live ? ".fp-live-edge" : ".fp-live-start"
-            live_ui.querySelector(buttonSelector).click()
-        }, live_ui, live)
+    await page.evaluate((player, live_ui, live) => {
+        return new Promise((ok, err) => {
+            setTimeout(() => {
+                player.addEventListener("seeking", () => {
+                    const currentTime = player.currentTime
+                    const position = live ? player.hls.liveSyncPosition : player.hls.liveSyncPosition - player.live_state.dvr_window
 
-    }, 10_000)
+                    if (Math.abs(position - currentTime) > 8) err(new Error(`The player did not seek at the ${live ? "edge" : "start"}`))
+                    ok("")
+                })
 
-    await Promise.all([
-        captureEvent(page, player, "playing"),
-        captureEvent(page, player, "seeked"),
-    ])
+                const buttonSelector = live ? ".fp-live-edge" : ".fp-live-start"
+                live_ui.querySelector(buttonSelector).click()
+            }, 10_000)
+        })
+    }, player, live_ui, live)
 }

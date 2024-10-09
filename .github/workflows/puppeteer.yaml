@@ -1,4 +1,4 @@
-name: CI
+name: puppeteer tests
 
 on:
   push:
@@ -8,8 +8,8 @@ on:
 
 jobs:
   build:
-    name: Build and Test
-    timeout-minutes: 15
+    name: puppeteer tests
+    timeout-minutes: 5
     runs-on: ubuntu-latest
 
     steps:
@@ -26,8 +26,5 @@ jobs:
       - name: Install dependencies
         run: npm install --frozen-lockfile
 
-      - name: Build
-        run: npm run build build
-
       - name: Test
-        run: npm run test
+        run: npm run test:puppeteer

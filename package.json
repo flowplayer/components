@@ -1,42 +1,41 @@
 {
   "name": "@flowplayer/components",
-  "packageManager": "yarn@3.6.1",
   "private": true,
   "scripts": {
     "new:component": "tsx tooling/code-gen/bin.ts",
     "cdn:manifest": "tsx tooling/cdn/bin.ts",
     "build": "webpack",
-    "test:puppeteer": "yarn ava --config test/puppeteer/_ava.config.mjs"
+    "test:puppeteer": "ava --config test/puppeteer/_ava.config.mjs"
   },
   "devDependencies": {
-    "@types/inquirer": "^9.0.7",
     "@flowplayer/player": "^3.11.1",
+    "@types/inquirer": "^9.0.7",
+    "ava": "^4.2.0",
+    "css-loader": "^7.1.2",
+    "dotenv": "^16.0.1",
     "eta": "^3.4.0",
     "globby": "^14.0.1",
+    "http-server": "^14.1.0",
     "inquirer": "^9.2.16",
+    "mkdirp": "^1.0.4",
     "mustache": "^4.2.0",
+    "pug": "^3.0.3",
+    "puppeteer": "^22.8.2",
+    "puppeteer-screen-recorder": "^2.0.2",
+    "style-loader": "^4.0.0",
+    "ts-loader": "^9.5.1",
     "tsx": "^4.7.1",
     "turbo": "^1.12.4",
     "typescript": "latest",
     "webpack": "^5.91.0",
-    "ts-loader": "^9.5.1",
-    "puppeteer": "^14.4.0",
-    "mkdirp": "^1.0.4",
-    "http-server": "^14.1.0",
-    "puppeteer-screen-recorder": "^2.0.2",
-    "ava": "^4.2.0",
-    "pug": "^3.0.3",
-    "dotenv": "^16.0.1",
-    "style-loader": "^4.0.0",
-    "css-loader": "^7.1.2",
-    "webpack-cli": "^5.1.4"
+    "webpack-cli": "^5.1.4",
+    "tsimp": "^2.0.11"
   },
   "workspaces": [
     "packages/*"
   ],
   "volta": {
-    "node": "20.11.1",
-    "yarn": "3.8.1"
+    "node": "22.9.0"
   },
   "dependencies": {
     "colors": "^1.4.0"

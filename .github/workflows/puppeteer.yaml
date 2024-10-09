@@ -1,0 +1,33 @@
+name: puppeteer tests
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    types: [opened, synchronize]
+
+jobs:
+  test-puppeteer:
+    name: puppeteer tests
+    timeout-minutes: 5
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: setup node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: npm install
+        run: npm install --frozen-lockfile
+
+      - name: build
+        run: npm run build
+
+      - name: test - puppeteer
+        run: npm run test:puppeteer

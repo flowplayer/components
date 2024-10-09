@@ -20,7 +20,7 @@
     "mkdirp": "^1.0.4",
     "mustache": "^4.2.0",
     "pug": "^3.0.3",
-    "puppeteer": "^22.8.2",
+    "puppeteer": "^22.15.0",
     "puppeteer-screen-recorder": "^2.0.2",
     "style-loader": "^4.0.0",
     "ts-loader": "^9.5.1",

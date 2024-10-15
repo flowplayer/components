@@ -4,7 +4,7 @@
   "description": "A streamlined control bar with a single menu option that consolidates various settings",
   "flowplayer": {
     "componentName": "combined-menu-control",
-    "overridenComponent": "flowplayer-control",
+    "overriddenComponent": "flowplayer-control",
     "className": "CombinedMenuControl"
   }
 }

@@ -4,7 +4,7 @@
   "description": "A screen rendered before live stream playback with options to start the stream from the beginning or from the live position",
   "flowplayer": {
     "componentName": "live-ui",
-    "overridenComponent": "flowplayer-middle",
+    "overriddenComponent": "flowplayer-middle",
     "className": "LiveUiMiddle"
   }
 }

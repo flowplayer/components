@@ -4,7 +4,7 @@
   "description": "<%~ it.description %>",
   "flowplayer": {
     "componentName": "<%~ it.newComponentHTMLName %>",
-    "overridenComponent": "<%~ it.flowplayerComponentName %>",
+    "overriddenComponent": "<%~ it.flowplayerComponentName %>",
     "className": "<%~ it.newComponentClassName %>"
   }
 }

@@ -4,6 +4,7 @@
   "scripts": {
     "new:component": "tsx tooling/code-gen/bin.ts",
     "cdn:manifest": "tsx tooling/cdn/bin.ts",
+    "postbuild": "npm run cdn:manifest > dist/index.json",
     "build": "webpack",
     "test:puppeteer": "ava --config test/puppeteer/_ava.config.mjs"
   },

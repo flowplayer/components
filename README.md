@@ -4,7 +4,7 @@ The Wowza Flowplayer component registry is a public repository that allows for f
 
 For more information about using this component registry, see the following guide:
 
-* [Before you start](https://preview.redoc.ly/developer-wowza-com/PLAY-281-add-docs-component-registry-usage/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#before-you-start)
-* [Component packages](https://preview.redoc.ly/developer-wowza-com/PLAY-281-add-docs-component-registry-usage/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#component-packages)
-* [Add a registry component](https://preview.redoc.ly/developer-wowza-com/PLAY-281-add-docs-component-registry-usage/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#add-the-registry-component)
-* [Use the CDN to add components](https://preview.redoc.ly/developer-wowza-com/PLAY-281-add-docs-component-registry-usage/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#use-the-cdn-to-add-components)
+* [Before you start](https://developer.wowza.com/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#before-you-start)
+* [Component packages](https://developer.wowza.com/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#component-packages)
+* [Add a registry component](https://developer.wowza.com/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#add-the-registry-component)
+* [Use the CDN to add components](https://developer.wowza.com/docs/wowza-flowplayer/guides/customize-the-player-with-the-component-registry/#use-the-cdn-to-add-components)

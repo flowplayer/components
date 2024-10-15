@@ -1,7 +1,7 @@
 {
   "name": "@flowplayer/components-vertical-volume-bar",
   "main": "./index.ts",
-  "description": "A vertical volume bar",
+  "description": "A vertical volume bar to control the level of sound output",
   "flowplayer": {
     "componentName": "vertical-volume-bar",
     "overridenComponent": "flowplayer-volume-control",

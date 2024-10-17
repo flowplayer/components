@@ -8,7 +8,9 @@ export async function createPackageInfoList () {
     return {name, description, ...flowplayer}
   })
 
-  await fs.writeFile("dist/index.json", JSON.stringify({createdAt: now, entries}, null, 2))
+  const pkg = JSON.parse((await fs.readFile("./package.json")).toString())
+
+  await fs.writeFile("dist/index.json", JSON.stringify({version: pkg.version, createdAt: now, entries}, null, 2))
 }
 
 ~(async function main () {
